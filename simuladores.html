@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Simuladores | Projeto Organiza</title>
+  <meta name="description" content="Simuladores gratuitos de reserva de emergência, juros compostos, orçamento 50-30-20 e limite de faturamento do MEI.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-pagina="simuladores">
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo">
+    <div class="wrap">
+      <a class="marca" href="index.html">Projeto <span>Organiza</span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu" class="menu">
+        <li><a href="index.html" data-pagina="inicio">Início</a></li>
+        <li><a href="simuladores.html" data-pagina="simuladores">Simuladores</a></li>
+        <li><a href="portal-mei.html" data-pagina="mei">Portal do MEI</a></li>
+        <li><a href="planilha.html" data-pagina="planilha">Planilha</a></li>
+        <li><a href="videos.html" data-pagina="videos">Vídeos</a></li>
+        <li><a href="dicas.html" data-pagina="dicas">Dicas</a></li>
+        <li><a href="pesquisa.html" data-pagina="pesquisa">Pesquisa</a></li>
+      </ul>
+    </div>
+  </header>
+  <main id="conteudo">
+    <div class="wrap">
+      <h1>Simuladores</h1>
+      <p class="lead">Coloque seus números e veja o resultado na hora. Nada do que você digita sai do seu aparelho.</p>
+      <div class="aviso atencao">
+        <p><strong>Simulação educativa, não é recomendação de investimento.</strong> Rentabilidade passada não garante rentabilidade futura. Os cálculos não consideram impostos nem taxas.</p>
+      </div>
+
+      <div class="abas" role="tablist" aria-label="Escolha o simulador">
+        <button type="button" role="tab" id="aba-reserva" aria-controls="p-reserva" aria-selected="true">Reserva de emergência</button>
+        <button type="button" role="tab" id="aba-investimento" aria-controls="p-investimento" aria-selected="false" tabindex="-1">Investimento</button>
+        <button type="button" role="tab" id="aba-orcamento" aria-controls="p-orcamento" aria-selected="false" tabindex="-1">Orçamento 50-30-20</button>
+        <button type="button" role="tab" id="aba-mei" aria-controls="p-mei" aria-selected="false" tabindex="-1">Limite do MEI</button>
+      </div>
+
+      <!-- Reserva de emergência -->
+      <section class="painel card" id="p-reserva" role="tabpanel" aria-labelledby="aba-reserva">
+        <h2>Reserva de emergência</h2>
+        <p>A reserva é o dinheiro guardado para imprevistos: perda de renda, problema de saúde, conserto urgente. Ela evita que você precise pegar empréstimo caro.</p>
+        <div class="campos">
+          <div>
+            <label for="r-custo">Quanto você gasta por mês (R$)<span class="dica">Some aluguel, contas, mercado, transporte e outros gastos fixos.</span></label>
+            <input id="r-custo" inputmode="decimal" value="3000">
+          </div>
+          <div>
+            <label for="r-tipo">Sua situação de trabalho<span class="dica">Define a sugestão de meses de reserva.</span></label>
+            <select id="r-tipo">
+              <option value="6">Carteira assinada (sugestão: 6 meses)</option>
+              <option value="12">Autônomo ou MEI (sugestão: 12 meses)</option>
+            </select>
+          </div>
+          <div>
+            <label for="r-meses">Quantos meses de reserva</label>
+            <input id="r-meses" inputmode="numeric" value="6">
+          </div>
+          <div>
+            <label for="r-guardado">Quanto você já tem guardado (R$)</label>
+            <input id="r-guardado" inputmode="decimal" value="0">
+          </div>
+          <div>
+            <label for="r-aporte">Quanto consegue guardar por mês (R$)</label>
+            <input id="r-aporte" inputmode="decimal" value="500">
+          </div>
+          <div>
+            <label for="r-taxa">Rendimento estimado ao mês (%)<span class="dica">Use 0 se o dinheiro não render. Exemplo: 0,8 para 0,8% ao mês.</span></label>
+            <input id="r-taxa" inputmode="decimal" value="0,8">
+          </div>
+        </div>
+        <div class="resultados" aria-live="polite">
+          <div class="numero destaque"><small>Sua meta de reserva</small><strong id="r-meta">-</strong></div>
+          <div class="numero"><small>Quanto ainda falta</small><strong id="r-falta">-</strong></div>
+          <div class="numero"><small>Tempo até a meta</small><strong id="r-tempo">-</strong></div>
+        </div>
+        <div id="r-aviso" class="aviso" aria-live="polite"></div>
+        <h3>Evolução da reserva mês a mês</h3>
+        <div class="grafico-area"><svg id="r-grafico" class="grafico" role="img" aria-label="Gráfico da evolução da reserva até a meta. Passe o mouse ou toque numa barra para ver o valor."></svg></div>
+        <div class="legenda"><span><i class="cor-verde"></i>Valor guardado</span><span><i class="cor-vermelha"></i>Meta</span></div>
+        <p class="dica">Onde guardar a reserva: em aplicações de baixo risco e que permitam sacar a qualquer momento. Antes de escolher, compare opções e tire dúvidas com o seu banco.</p>
+      </section>
+
+      <!-- Investimento -->
+      <section class="painel card" id="p-investimento" role="tabpanel" aria-labelledby="aba-investimento" hidden>
+        <h2>Investimento com aportes mensais</h2>
+        <p>Veja como um valor guardado todo mês cresce com os juros compostos: os juros de um mês passam a render juros nos meses seguintes.</p>
+        <div class="campos">
+          <div>
+            <label for="j-inicial">Valor inicial (R$)</label>
+            <input id="j-inicial" inputmode="decimal" value="1000">
+          </div>
+          <div>
+            <label for="j-aporte">Quanto vai investir por mês (R$)</label>
+            <input id="j-aporte" inputmode="decimal" value="200">
+          </div>
+          <div>
+            <label for="j-taxa">Rendimento estimado ao ano (%)<span class="dica">Exemplo: 10 para 10% ao ano.</span></label>
+            <input id="j-taxa" inputmode="decimal" value="10">
+          </div>
+          <div>
+            <label for="j-anos">Por quantos anos</label>
+            <input id="j-anos" inputmode="numeric" value="10">
+          </div>
+        </div>
+        <div class="resultados" aria-live="polite">
+          <div class="numero destaque"><small>Valor ao final</small><strong id="j-total">-</strong></div>
+          <div class="numero"><small>Total que você investiu</small><strong id="j-investido">-</strong></div>
+          <div class="numero"><small>Total de juros</small><strong id="j-juros">-</strong></div>
+        </div>
+        <p class="dica">Taxa mensal equivalente: <span id="j-mensal">-</span></p>
+        <h3>Crescimento ano a ano</h3>
+        <div class="grafico-area"><svg id="j-grafico" class="grafico" role="img" aria-label="Gráfico do total investido e dos juros por ano. Passe o mouse ou toque numa barra para ver os valores."></svg></div>
+        <div class="legenda"><span><i class="cor-azul"></i>Total investido</span><span><i class="cor-verde-claro"></i>Juros</span></div>
+        <div class="tabela-rolagem">
+          <table>
+            <thead><tr><th>Ano</th><th class="num">Investido</th><th class="num">Juros</th><th class="num">Saldo</th></tr></thead>
+            <tbody id="j-tabela"></tbody>
+          </table>
+        </div>
+        <div class="aviso"><p>Diversificar é não colocar todo o dinheiro em um só lugar. Antes de investir, tenha a reserva de emergência pronta e entenda o risco de cada aplicação.</p></div>
+      </section>
+
+      <!-- Orçamento -->
+      <section class="painel card" id="p-orcamento" role="tabpanel" aria-labelledby="aba-orcamento" hidden>
+        <h2>Orçamento 50-30-20</h2>
+        <p>Uma regra simples para dividir a renda do mês. É um ponto de partida: ajuste à sua realidade.</p>
+        <div class="campos">
+          <div>
+            <label for="o-renda">Sua renda líquida por mês (R$)<span class="dica">O que cai na conta, já com descontos.</span></label>
+            <input id="o-renda" inputmode="decimal" value="3000">
+          </div>
+        </div>
+        <div class="resultados" aria-live="polite">
+          <div class="numero"><small>50% Necessidades</small><strong id="o-nec">-</strong></div>
+          <div class="numero"><small>30% Desejos</small><strong id="o-des">-</strong></div>
+          <div class="numero destaque"><small>20% Poupança e investimento</small><strong id="o-pou">-</strong></div>
+        </div>
+        <ul class="lista">
+          <li><strong>Necessidades:</strong> moradia, contas de casa, mercado, transporte, saúde.</li>
+          <li><strong>Desejos:</strong> lazer, restaurantes, compras que não são essenciais.</li>
+          <li><strong>Poupança e investimento:</strong> reserva de emergência, metas e pagamento extra de dívidas.</li>
+        </ul>
+        <div class="aviso"><p>Se as necessidades passam de 50%, não desanime. Comece guardando o que for possível e revise os gastos aos poucos.</p></div>
+      </section>
+
+      <!-- Limite do MEI -->
+      <section class="painel card" id="p-mei" role="tabpanel" aria-labelledby="aba-mei" hidden>
+        <h2>Limite de faturamento do MEI</h2>
+        <p>Em 2026, o MEI pode faturar até <strong>R$ 81.000 por ano</strong>. Quem abriu a empresa neste ano tem limite proporcional: <strong>R$ 6.750 por mês</strong> de atividade.</p>
+        <div class="campos">
+          <div>
+            <label for="m-faturamento">Faturamento acumulado no ano (R$)<span class="dica">Some todas as vendas e serviços desde janeiro, ou desde a abertura.</span></label>
+            <input id="m-faturamento" inputmode="decimal" value="50000">
+          </div>
+          <div>
+            <label for="m-abertura">Quando a empresa foi aberta</label>
+            <select id="m-abertura">
+              <option value="">Antes deste ano</option>
+              <option value="1">Em janeiro deste ano</option>
+              <option value="2">Em fevereiro deste ano</option>
+              <option value="3">Em março deste ano</option>
+              <option value="4">Em abril deste ano</option>
+              <option value="5">Em maio deste ano</option>
+              <option value="6">Em junho deste ano</option>
+              <option value="7">Em julho deste ano</option>
+              <option value="8">Em agosto deste ano</option>
+              <option value="9">Em setembro deste ano</option>
+              <option value="10">Em outubro deste ano</option>
+              <option value="11">Em novembro deste ano</option>
+              <option value="12">Em dezembro deste ano</option>
+            </select>
+          </div>
+        </div>
+        <div class="resultados" aria-live="polite">
+          <div class="numero"><small>Seu limite no ano</small><strong id="m-limite">-</strong></div>
+          <div class="numero"><small>Quanto já usou</small><strong id="m-usado">-</strong></div>
+          <div class="numero destaque"><small>Ainda pode faturar</small><strong id="m-disponivel">-</strong></div>
+        </div>
+        <div id="m-barra" class="barra" aria-hidden="true"><div></div></div>
+        <div id="m-aviso" class="aviso" aria-live="polite"></div>
+        <p class="dica">Regras de 2026. Os valores podem mudar por lei: confira sempre no <a href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor" rel="noopener" target="_blank">Portal do Empreendedor</a>.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="rodape">
+    <div class="wrap">
+      <p><strong>Projeto Organiza</strong>: educação financeira gratuita para pessoas físicas e microempreendedores individuais.</p>
+      <p>Projeto de extensão | Engenharia de Software | UniBrasil | Orientador: Prof. Leonel da Rocha</p>
+      <p>Desenvolvido por Gabryel Zanella Barroso. Conteúdo educativo, não é recomendação de investimento.</p>
+      <p>Este site não coleta nem guarda seus dados. Os simuladores funcionam só no seu aparelho.</p>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/calc.js"></script>
+  <script src="assets/js/simuladores.js"></script>
+</body>
+</html>

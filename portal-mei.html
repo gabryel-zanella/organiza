@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Portal do MEI | Projeto Organiza</title>
+  <meta name="description" content="Atalhos explicados para os serviços oficiais do MEI: nota fiscal, DAS, declaração anual, CCMEI e consulta de CNPJ.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-pagina="mei">
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo">
+    <div class="wrap">
+      <a class="marca" href="index.html">Projeto <span>Organiza</span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu" class="menu">
+        <li><a href="index.html" data-pagina="inicio">Início</a></li>
+        <li><a href="simuladores.html" data-pagina="simuladores">Simuladores</a></li>
+        <li><a href="portal-mei.html" data-pagina="mei">Portal do MEI</a></li>
+        <li><a href="planilha.html" data-pagina="planilha">Planilha</a></li>
+        <li><a href="videos.html" data-pagina="videos">Vídeos</a></li>
+        <li><a href="dicas.html" data-pagina="dicas">Dicas</a></li>
+        <li><a href="pesquisa.html" data-pagina="pesquisa">Pesquisa</a></li>
+      </ul>
+    </div>
+  </header>
+  <main id="conteudo">
+    <div class="wrap">
+      <h1>Portal do MEI</h1>
+      <p class="lead">Os serviços oficiais do MEI em um só lugar, com o passo a passo de cada um. Toque no serviço para ver as instruções.</p>
+      <div class="aviso perigo">
+        <p><strong>Cuidado com golpes.</strong> Todos os serviços do MEI são gratuitos. Use apenas sites do governo (endereços terminados em <strong>gov.br</strong>). Desconfie de sites, boletos ou mensagens que cobram para gerar o DAS ou fazer a declaração.</p>
+      </div>
+
+      <h2>Serviços do dia a dia</h2>
+
+      <details class="servico">
+        <summary>Emitir nota fiscal de serviço<small>Emissor Nacional de NFS-e</small></summary>
+        <div class="conteudo">
+          <p>O MEI que presta serviço emite a nota fiscal pelo Emissor Nacional, do governo federal.</p>
+          <p><strong>O que ter em mãos:</strong> conta gov.br (nível prata ou ouro), CPF ou CNPJ do cliente, descrição do serviço e valor.</p>
+          <ol class="passos">
+            <li>Acesse o Emissor Nacional e entre com sua conta gov.br.</li>
+            <li>Escolha a opção para emitir uma nova NFS-e.</li>
+            <li>Informe os dados do cliente (tomador do serviço).</li>
+            <li>Descreva o serviço, escolha o código do serviço e informe o valor.</li>
+            <li>Confira tudo, emita a nota e envie o PDF ao cliente.</li>
+          </ol>
+          <p><strong>Erros comuns:</strong> escolher um código de serviço que não corresponde à sua atividade e esquecer de emitir a nota no mês do serviço.</p>
+          <a class="btn" href="https://www.nfse.gov.br/EmissorNacional" rel="noopener" target="_blank">Abrir o Emissor Nacional</a>
+        </div>
+      </details>
+
+      <details class="servico">
+        <summary>Gerar e pagar o DAS<small>PGMEI, no Portal do Simples Nacional</small></summary>
+        <div class="conteudo">
+          <p>O DAS é a guia mensal do MEI. Ela inclui o INSS, que garante seus direitos como aposentadoria e auxílio-doença. O vencimento é no <strong>dia 20 de cada mês</strong>.</p>
+          <p><strong>O que ter em mãos:</strong> o número do CNPJ.</p>
+          <ol class="passos">
+            <li>Acesse o PGMEI e informe o CNPJ.</li>
+            <li>Escolha a opção de emitir a guia de pagamento (DAS).</li>
+            <li>Selecione o ano e marque o mês que deseja pagar.</li>
+            <li>Gere a guia e pague pelo código de barras ou pelo Pix, no app do banco.</li>
+          </ol>
+          <p><strong>Erros comuns:</strong> deixar guias acumularem (atraso gera multa e juros) e pagar guias recebidas por mensagem sem conferir a origem.</p>
+          <a class="btn" href="https://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/pgmei.app/Identificacao" rel="noopener" target="_blank">Abrir o PGMEI</a>
+        </div>
+      </details>
+
+      <details class="servico">
+        <summary>Controlar o limite de faturamento<small>Calculadora do Projeto Organiza</small></summary>
+        <div class="conteudo">
+          <p>Em 2026 o limite é de R$ 81.000 por ano (R$ 6.750 por mês no ano de abertura). Registre todo mês quanto faturou para não ser pego de surpresa.</p>
+          <a class="btn" href="simuladores.html#mei">Abrir a calculadora do limite</a>
+        </div>
+      </details>
+
+      <h2>Serviços anuais e documentos</h2>
+
+      <details class="servico">
+        <summary>Declaração anual (DASN-SIMEI)<small>Entrega até 31 de maio de cada ano</small></summary>
+        <div class="conteudo">
+          <p>Todo MEI precisa declarar quanto faturou no ano anterior, <strong>mesmo que não tenha faturado nada</strong>.</p>
+          <p><strong>O que ter em mãos:</strong> o CNPJ e o total faturado no ano anterior, separado em comércio ou indústria e serviços. Também é preciso informar se teve empregado.</p>
+          <ol class="passos">
+            <li>Acesse a DASN-SIMEI e informe o CNPJ.</li>
+            <li>Escolha o ano a declarar.</li>
+            <li>Informe o faturamento e se teve empregado.</li>
+            <li>Confira, transmita e guarde o recibo.</li>
+          </ol>
+          <p><strong>Erros comuns:</strong> perder o prazo (gera multa) e não somar todo o faturamento do ano.</p>
+          <a class="btn" href="https://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/DASNSIMEI.app/Default.aspx" rel="noopener" target="_blank">Abrir a DASN-SIMEI</a>
+        </div>
+      </details>
+
+      <details class="servico">
+        <summary>Certificado do MEI (CCMEI)<small>Comprovante de que você é MEI</small></summary>
+        <div class="conteudo">
+          <p>O CCMEI comprova que a empresa está formalizada e ativa. É pedido para abrir conta de pessoa jurídica, pedir crédito e vender para empresas ou órgãos públicos.</p>
+          <ol class="passos">
+            <li>Acesse a página do CCMEI no Portal do Empreendedor.</li>
+            <li>Use o botão de emissão de comprovante e entre com sua conta gov.br.</li>
+            <li>Consulte e salve o certificado em PDF.</li>
+          </ol>
+          <p>Existe também o <strong>CCMEI Digital Simplificado</strong>, com QR Code, emitido pelo aplicativo da Receita Federal.</p>
+          <a class="btn" href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/servicos-para-mei/emissao-de-comprovante-ccmei" rel="noopener" target="_blank">Abrir a página do CCMEI</a>
+        </div>
+      </details>
+
+      <details class="servico">
+        <summary>Consultar o CNPJ<small>Comprovante de inscrição e situação cadastral</small></summary>
+        <div class="conteudo">
+          <p>Mostra se o CNPJ está ativo e traz o comprovante de inscrição, pedido por bancos e clientes.</p>
+          <ol class="passos">
+            <li>Acesse a consulta da Receita Federal.</li>
+            <li>Digite o CNPJ e confirme a verificação de segurança.</li>
+            <li>Salve ou imprima o comprovante.</li>
+          </ol>
+          <a class="btn" href="https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp" rel="noopener" target="_blank">Abrir a consulta de CNPJ</a>
+        </div>
+      </details>
+
+      <details class="servico">
+        <summary>Portal do Empreendedor<small>Página oficial com todos os serviços do MEI</small></summary>
+        <div class="conteudo">
+          <p>É o ponto de partida oficial do governo para quem quer ser MEI ou já é: formalização, alteração de dados, parcelamentos, baixa da empresa e perguntas frequentes.</p>
+          <a class="btn" href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor" rel="noopener" target="_blank">Abrir o Portal do Empreendedor</a>
+        </div>
+      </details>
+
+      <div class="aviso">
+        <p>Links conferidos em novembro de 2026. Os endereços do governo podem mudar. Se algum não abrir, procure o serviço pelo Portal do Empreendedor.</p>
+      </div>
+    </div>
+  </main>
+  <footer class="rodape">
+    <div class="wrap">
+      <p><strong>Projeto Organiza</strong>: educação financeira gratuita para pessoas físicas e microempreendedores individuais.</p>
+      <p>Projeto de extensão | Engenharia de Software | UniBrasil | Orientador: Prof. Leonel da Rocha</p>
+      <p>Desenvolvido por Gabryel Zanella Barroso. Conteúdo educativo, não é recomendação de investimento.</p>
+      <p>Este site não coleta nem guarda seus dados. Os simuladores funcionam só no seu aparelho.</p>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
